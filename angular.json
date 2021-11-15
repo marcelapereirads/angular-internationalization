@@ -60,6 +60,13 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "en": {
+              "aot": true,
+              "outputPath": "dist/angular-internationalization-en",
+              "i18nFile": "src/i18n/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en"
             }
           }
         },
@@ -71,6 +78,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-internationalization:build:production"
+            },
+            "en": {
+              "browserTarget": "angular-internationalization:build:en"
             }
           }
         },
@@ -121,8 +131,24 @@
               "devServerTarget": "angular-internationalization:serve:production"
             }
           }
+        },
+        "xliffmerge": {
+          "builder": "@ngx-i18nsupport/tooling:xliffmerge",
+          "options": {
+            "xliffmergeOptions": {
+              "i18nFormat": "xlf",
+              "srcDir": "src/i18n",
+              "genDir": "src/i18n",
+              "defaultLanguage": "pt",
+              "languages": [
+                "pt",
+                "en"
+              ]
+            }
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular-internationalization"
 }
